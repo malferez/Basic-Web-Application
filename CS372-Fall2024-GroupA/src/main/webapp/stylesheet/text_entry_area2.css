@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&family=Source+Sans+Pro:ital,wght@0,200;1,200&family=Ubuntu:wght@300&display=swap');
+/*format the main page content entry (section title[titleof the textarea] and detail[textarea])*/
+h1{
+	font-size: 30px;
+	color: #310309;
+	letter-spacing: 3px;
+	word-spacing:6px;
+	text-align: center;	
+}
+/*format header2 (h2) */
+h2{
+	font-size: 20px;
+	color: #17202A;
+	letter-spacing: 3px;
+	word-spacing:6px;
+	text-align: center;
+}
+
+body
+{
+	min-height: 100vh;
+/*	background: linear-gradient(#4128EA, #000123);*/
+}
+.content-entry
+{
+	width:500px;
+	background: #FFF;
+	border-radius: 5px;
+	padding: 25px 25px 30px;	
+}
+.content-entry .frmcontent-entry .text-title-content
+{
+	font-size: 20px;
+	color: #4671EA;
+	text-align: left;	
+}
+.content-entry .frmcontent-entry .text-content-detail
+{
+	width: 100%;
+	height: 70px;		
+	padding: 10px;	
+	outline: none;
+	resize: none;	
+	font-size: 14px;
+	margin-top: 20px;
+	border-radius: 5px;
+	border-color: black;	
+}
+textarea:is(:focus, :valid){
+	border-color: #4671EA;
+	border-width: 2px;
+	padding: 16px;		
+}
+textarea::-webkit-scrollbar{
+	width: 0px;
+}
+
+#txttitle{
+	text-align: center;
+	font-size: 18px;
+	color: red;
+	top: 1rem;
+}
+p{
+	 line-height: 2 ;
+	 text-indent: 50px;
+}
+
+

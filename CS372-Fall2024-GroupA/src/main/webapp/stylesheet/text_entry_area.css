@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&family=Source+Sans+Pro:ital,wght@0,200;1,200&family=Ubuntu:wght@300&display=swap');
+/*format the main page content entry (section title[titleof the textarea] and detail[textarea])*/
+h1{
+	font-size: 30px;
+	color: #310309;
+	letter-spacing: 3px;
+	word-spacing:6px;
+	text-align: center;	
+}
+/*format header2 (h2) */
+h2{
+	font-size: 20px;
+	color: #17202A;
+	letter-spacing: 3px;
+	word-spacing:6px;
+	text-align: center;
+}
+	
+/* Styles for table layout on main page */
+.tblmainpage {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    table-layout: fixed; /* Ensures equal width distribution */
+}
+
+.tblmainpage td {
+    width: 33.33%; /* Each cell takes one-third of the table width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    vertical-align: top; /* Align content to the top of each cell */
+}
+
+#txttitle {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+    margin-bottom: 10px; /* Adds spacing below the title */
+}
+
+p {
+    line-height: 1.6;
+    text-indent: 20px;
+    padding: 5px;
+}
