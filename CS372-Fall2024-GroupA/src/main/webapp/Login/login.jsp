@@ -8,7 +8,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/LoginServlet" method="post"> <!-- Adjusted action path to point to LoginServlet -->
+        <form action="/CS372-Fall2024-GroupA/LoginServlet" method="post"> <!-- Adjusted action path to point to LoginServlet -->
             <div class="form-group">
                 <label for="usernameOrEmail">Username or Email</label>
                 <input type="text" id="usernameOrEmail" name="usernameOrEmail" required maxlength="32">

@@ -55,30 +55,26 @@ main{
 }
 
 /* formatting the second level menu*/
-.menu_containerul .menu_containerli .secondlevelul_menu {
-    position: absolute;
-    top: 100%; /* Ensure dropdown aligns just below the parent */
-    left: 0;
-    width: 300px; /* Consistent width */
-    background-color: #FFff9345;
-    box-shadow: 0 20px 45px #00002344;
-    border-radius: 0.2rem;
-
-    /* Initially hidden */
-    opacity: 0;
-    z-index: -1; /* Hide initially */
-    transition: all ease 0.5s;
-    overflow: visible; /* Prevent content from being clipped */
+.menu_containerul .menu_containerli .secondlevelul_menu
+{
+	
+	position: absolute;
+	width: 200px;
+	background-color: #FFff9345;
+	box-shadow: 0 20px 45px #00002344;
+	border-radius: 0.2rem;
+	
+	/*the opacity and z-index make the menu invisible*/
+	opacity:0;	
+	z-index: -999;	
+	transition: all ease 0.5s;
 }
 
 .menu_containerul .menu_containerli:hover .secondlevelul_menu{
 	z-index: 99;	
 	opacity: 1;
 	margin-top:0;
-	width: 300px;.menu_containerul .menu_containerli:hover .secondlevelul_menu {
-    z-index: 9999; /* Bring it to the front */
-    opacity: 1; /* Make it visible */
-    margin-top: 0;	
+	width: 300px;	
 }
 .menu_containerul .secondlevelul_menu .menu_containerli{
 	margin: 0;
@@ -92,18 +88,18 @@ main{
 	width: 100%;	
 }
 /*format submenu*/
-.submenu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 100%; /* Align submenu to the right of its parent */
-    opacity: 0;
-    z-index: -1; /* Initially hidden */
-    transition: all ease 0.5s;
+.submenu
+{
+	display: flex;
+	flex-direction: column;
+	opacity:0;	
+	z-index: -999;	
+	transition: all ease 0.5s;
 }
-.menu_containerli:hover .submenu {
-    z-index: 9999; /* Ensure it's above other elements */
-    opacity: 1;	
+.menu_containerli:hover .submenu
+{
+	z-index: 99;	
+	opacity: 1;
+	margin-top:0;
+	width: 300px;	
 	}
-}

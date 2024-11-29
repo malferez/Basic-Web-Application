@@ -38,7 +38,6 @@ public class RegisterServlet extends HttpServlet {
         String secAnswer1 = request.getParameter("secAnswer1");
         String secQuestion2 = request.getParameter("secQuestion2");
         String secAnswer2 = request.getParameter("secAnswer2");
-        String accessLevel = request.getParameter("accessLevel");
 
         // Create a UserRegistrationModel object to store the extracted data
         UserRegistrationModel regModel = new UserRegistrationModel();
@@ -52,7 +51,8 @@ public class RegisterServlet extends HttpServlet {
         regModel.setSecAnswer1(secAnswer1);
         regModel.setSecQuestion2(secQuestion2);
         regModel.setSecAnswer2(secAnswer2);
-        regModel.setAccessLevel(accessLevel);
+        
+        System.out.println(username);
 
         // Register user using the authentication class
         authentication authService = new authentication();
@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
             } else {
                 // Show error message on the registration page if user already exists
                 request.setAttribute("errorMessage", "User already exists. Please try a different username or email.");
-                request.getRequestDispatcher("/Login/register.jsp").forward(request, response);
+                request.getRequestDispatcher("/Register/register.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
