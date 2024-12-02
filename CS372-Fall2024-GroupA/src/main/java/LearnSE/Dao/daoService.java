@@ -7,14 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import LearnSE.dbConnection;
 import LearnSE.Model.mainEntryModel;
-import LearnSE.Model.processtypedata;
 
 public class daoService {
 
     // Add main page content method
-    public void addMainContent(mainEntryModel fieldsEntry) throws SQLException 
+    public void addMainContent(mainEntryModel fieldsEntry) throws SQLException
     	{
     		LearnSE.dbConnection conn = new LearnSE.dbConnection("cs372_2024db", "root", "Passw0rd"); /**create an instance of the database-connection
     		class with the database name, username, and the password*/

@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&family=Source+Sans+Pro:ital,wght@0,200;1,200&family=Ubuntu:wght@300&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 2px;
+    padding: 1px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15px;
+}
+
+main {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+    color: #76434843;
+    margin: 1px 10px 10px 10px;
+}
+
+.menu_containerul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin: 2.2rem 3rem;
+    width: 100%;
+    padding: 0 20px;
+    border-bottom: 1px solid #68d7e762;
+}
+
+.menu_containerli {
+    position: relative;
+    list-style: none;
+    margin: 0 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu_containerli:last-child {
+    margin-right: 0;
+}
+
+.menu_containerli a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #42424a;
+    padding: 3px 0;
+    display: inline-block;
+    transition: all ease 0.4s;
+}
+
+.menu_containerli a:hover {
+    color: grey;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* Dropdown menu styling */
+.secondlevelul_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background-color: #fff; /* Neutral background for visibility */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    border-radius: 0.2rem;
+    opacity: 0;
+    z-index: -1;
+    transition: all ease 0.5s;
+}
+
+.menu_containerli:hover > .secondlevelul_menu {
+    z-index: 9999;
+    opacity: 1;
+}
+
+/* Submenu styling */
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Align submenu to the right */
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    z-index: -1;
+    transition: all ease 0.5s;
+}
+
+.secondlevelul_menu .menu_containerli:hover > .submenu {
+    z-index: 9999;
+    opacity: 1;
+}
+
+.secondlevelul_menu .menu_containerli a {
+    padding: 10px;
+    color: #42424a;
+}
+
+.secondlevelul_menu .menu_containerli a:hover {
+    background-color: #eaeaea;
+}

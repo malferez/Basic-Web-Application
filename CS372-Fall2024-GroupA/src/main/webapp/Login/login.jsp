@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet/login.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheet/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -20,7 +20,7 @@
             <div class="button-group">
                 <button type="submit">Login</button>
                 <button type="button" onclick="location.href='../Login/forgotpassword.jsp'">Forgot Password</button> <!-- Adjusted path for forgot password -->
-                <button type="button" onclick="location.href='../Register/register.jsp'">New User</button> <!-- Adjusted path for register -->
+                <button type="button" onclick="location.href='../Login/register.jsp'">New User</button> <!-- Adjusted path for register -->
             </div>
         </form>
     </div>

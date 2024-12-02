@@ -9,7 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>CourseEntryServlet</display-name>
     <servlet-name>CourseEntryServlet</servlet-name>
@@ -18,13 +18,53 @@
   <servlet-mapping>
     <servlet-name>CourseEntryServlet</servlet-name>
     <url-pattern>/CourseEntryServlet</url-pattern>
-  </servlet-mapping> 
+  </servlet-mapping>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>LearnSE.ServletFiles.LoginServlet</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteAccountServlet</display-name>
+    <servlet-name>DeleteAccountServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.DeleteAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteAccountServlet</servlet-name>
+    <url-pattern>/DeleteAccountServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangePasswordServlet</display-name>
+    <servlet-name>ChangePasswordServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.ChangePasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePasswordServlet</servlet-name>
+    <url-pattern>/ChangePasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangeEmailServlet</display-name>
+    <servlet-name>ChangeEmailServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.ChangeEmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangeEmailServlet</servlet-name>
+    <url-pattern>/ChangeEmailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CyberAttackServlet</display-name>
+    <servlet-name>CyberAttackServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.CyberAttackServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CyberAttackServlet</servlet-name>
+    <url-pattern>/CyberAttackServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -85,10 +85,10 @@ public class UserRegistrationModel {
 				+ userConfirmPwd + ", secQuestion1=" + secQuestion1 + ", secAnswer1=" + secAnswer1 + ", secQuestion2="
 				+ secQuestion2 + ", secAnswer2=" + secAnswer2 + "]";
 	}
-    
-    
+
+
 
 }
 
-	
+
 

@@ -32,7 +32,7 @@ public class authentication2 {
 			{
 				PreparedStatement checkUserStmt = conn.prepareStatement("SELECT username, email FROM users WHERE username = ? OR email = ?");
 	            PreparedStatement insertUserStmt = conn.prepareStatement("INSERT INTO users (email, firstname, middlename, lastname, username, userid, password, securityquestion1, securityanswer1, securityquestion2, securityanswer2, securityaccesslevel, createdon) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_DATE())")) {
-	            
+
 	            // Check if the user already exists
 	            checkUserStmt.setString(1, regModel.getUserName());
 	            checkUserStmt.setString(2, regModel.getEmail());
@@ -56,7 +56,7 @@ public class authentication2 {
 	            insertUserStmt.setString(12, regModel.getAccessLevel());
 
 	            return insertUserStmt.executeUpdate() > 0;
-	            
+
 	        } catch (SQLException ex) {
 	            ex.printStackTrace();
 	            return false;
@@ -70,7 +70,7 @@ public class authentication2 {
         try (Connection conn = dbConn.create_connection_string();
              PreparedStatement checkUserStmt = conn.prepareStatement("SELECT username, email FROM users WHERE username = ? OR email = ?");
              PreparedStatement insertUserStmt = conn.prepareStatement("INSERT INTO users (email, firstname, middlename, lastname, username, userid, password, securityquestion1, securityanswer1, securityquestion2, securityanswer2, securityaccesslevel, createdon) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_DATE())")) {
-            
+
             // Check if the user already exists
             checkUserStmt.setString(1, regModel.getUserName());
             checkUserStmt.setString(2, regModel.getEmail());
@@ -94,7 +94,7 @@ public class authentication2 {
             insertUserStmt.setString(12, regModel.getAccessLevel());
 
             return insertUserStmt.executeUpdate() > 0;
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
@@ -103,7 +103,7 @@ public class authentication2 {
 
     private int generateUserId() {
         // Generate unique user ID, replace with a more robust approach as needed
-        return (int) (Math.random() * 100000); 
+        return (int) (Math.random() * 100000);
     }
 
     private String hashPassword(String password) {

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import LearnSE.dbConnection;
 import LearnSE.Model.UserRegistrationModel;
 
@@ -81,6 +82,6 @@ public class authentication {
     // Hash the password using SHA-256
     private String hashPassword(String password) {
         dbConnection dbConn = new dbConnection("cs372_2024db", "root", "Passw0rd");
-        return dbConn.hashpwd(password); // Assumes the dbConnection class has a working hashpwd method
+        return dbConn.hashpwd(password);
     }
 }

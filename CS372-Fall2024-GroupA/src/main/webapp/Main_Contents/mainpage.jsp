@@ -15,8 +15,8 @@ String userRole = (String) session.getAttribute("userRole");
 <meta charset="UTF-8">
 <title>Software Engineering</title>
 <!-- <link rel ="stylesheet" type="text/css" href="stylesheet/frt_page.css"> -->
-<link rel ="stylesheet" type="text/css" href="stylesheet/text_entry_area.css">
-<link rel ="stylesheet" type="text/css" href="stylesheet/sitemenu.css">
+<link rel ="stylesheet" type="text/css" href="../stylesheet/text_entry_area.css">
+<link rel ="stylesheet" type="text/css" href="../stylesheet/sitemenu.css">
 <style>
     .tblmainpage {
         width: 100%;

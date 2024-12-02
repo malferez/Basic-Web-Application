@@ -1,10 +1,9 @@
 package LearnSE.ServletFiles;
 
-import LearnSE.Model.UserRegistrationModel;
-import LearnSE.Dao.authentication;
-
 import java.io.IOException;
 
+import LearnSE.Dao.authentication;
+import LearnSE.Model.UserRegistrationModel;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -51,7 +50,7 @@ public class RegisterServlet extends HttpServlet {
         regModel.setSecAnswer1(secAnswer1);
         regModel.setSecQuestion2(secQuestion2);
         regModel.setSecAnswer2(secAnswer2);
-        
+
         System.out.println(username);
 
         // Register user using the authentication class
@@ -65,7 +64,7 @@ public class RegisterServlet extends HttpServlet {
             } else {
                 // Show error message on the registration page if user already exists
                 request.setAttribute("errorMessage", "User already exists. Please try a different username or email.");
-                request.getRequestDispatcher("/Register/register.jsp").forward(request, response);
+                request.getRequestDispatcher("/Login/register.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();

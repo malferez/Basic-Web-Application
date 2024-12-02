@@ -3,8 +3,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class dbConnection {
@@ -62,7 +60,7 @@ public class dbConnection {
     public boolean verifyPassword(String inputPassword, String storedHash) {
         // Hash the input password using the same hash method
         String inputHash = hashpwd(inputPassword);
-        
+
         // Compare the hashed input password with the stored hash
         return inputHash != null && inputHash.equals(storedHash);
     }
