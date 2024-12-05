@@ -12,7 +12,7 @@
                     %>
                     </a>
                 </li>
-                <li class="menu_containerli"><a href="">Home</a></li>             
+                <li class="menu_containerli"><a href="/CS372-Fall2024-GroupA/">Home</a></li>             
                 <li class="menu_containerli"><a href="">Administration</a>    
                     <ul class="secondlevelul_menu">
                         <li class="menu_containerli"><a href="">Front Page Content</a>

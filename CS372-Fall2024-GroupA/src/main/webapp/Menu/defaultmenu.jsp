@@ -3,7 +3,7 @@
 		<nav class="nav_menu">
 			<ul class="menu_containerul">
 			<li class="menu_containerli"><a href="">Hi, Guest</a></li>	          
-	           <li class="menu_containerli"><a href="">Home</a></li> 		            
+	           <li class="menu_containerli"><a href="/CS372-Fall2024-GroupA/">Home</a></li> 		            
 	           <li class="menu_containerli"><a href="">CyberSecurity Community</a>	    
 		            <ul class="secondlevelul_menu">
 			            <li class="menu_containerli"><a href="">Write an Article</a></li>  

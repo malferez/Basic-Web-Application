@@ -2,10 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="LearnSE.Model.CyberModel" %>
+<%
+String userRole = (String) session.getAttribute("userRole");
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Top Cyber Attacks</title>
+	<link rel ="stylesheet" type="text/css" href="/CS372-Fall2024-GroupA/stylesheet/text_entry_area.css">
+    <link rel="stylesheet" type="text/css" href="/CS372-Fall2024-GroupA/stylesheet/TopCountries.css">
     <style>
         table {
             width: 80%;
@@ -23,11 +28,21 @@
     </style>
 </head>
 <body>
+<h1>Department of Computer Science and Mathematics</h1>
+<h2>Software Engineering: Models, Methods, Process and Techniques with the Emphasis on cybersecurity</h2><hr><br><br>
+
+<% if (userRole == null) { %>
+    <%@ include file="../Menu/defaultmenu.jsp" %>
+<% } else if ("standard".equals(userRole)) { %>
+    <%@ include file="../Menu/standardmenu.jsp" %>
+<% } else if ("admin".equals(userRole)) { %>
+    <%@ include file="../Menu/adminmenu.jsp" %>
+<% } %>
     <h1 style="text-align: center;">Top Cyber Attacks</h1>
 
     <% 
         ArrayList<CyberModel> cyberData = (ArrayList<CyberModel>) request.getAttribute("cyberData");
-        if (cyberData == null) {
+        if (cyberData == null || cyberData.isEmpty()) {
     %>
         <p style="text-align: center; color: red;">No data available.</p>
     <% 

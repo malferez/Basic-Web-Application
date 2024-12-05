@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&family=Source+Sans+Pro:ital,wght@0,200;1,200&family=Ubuntu:wght@300&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 2px;
+    padding: 1px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15px;
+}
+
+main {
+    font-family: 'lato', sans-serif;
+    overflow-x: hidden;
+    color: #76434843;
+    margin: 1px 10px 10px 10px;
+}
+
+/* Top menu styling */
+.menu_containerul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin: 2.2 3rem;
+	width:100%;	
+	padding: 0 20px;
+    padding: 0 20px;
+    border-bottom: 1px solid #68d7e762;
+    background-color: #fff;
+}
+
+.menu_containerul .menu_containerli {
+    display: inline-block;
+    list-style: none;
+    margin: 0 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu_containerul .menu_containerli:last-child {
+    margin-right: 0;
+}
+
+.menu_containerul .menu_containerli a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #42424a;
+    padding: 3px 0;
+    display: inline-block;
+    transition: all ease 0.4s;
+}
+
+.menu_containerul .menu_containerli a:hover {
+    color: grey;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* Second-level menu */
+.menu_containerul .menu_containerli .secondlevelul_menu {
+    position: absolute;
+    width: 200px;
+    background-color: rgb(53, 132, 228);
+    box-shadow: 0 20px 45px #00002344;
+    border-radius: 0.2rem;
+    opacity: 0;
+    z-index: -999;
+    transition: all ease 0.5s;
+}
+
+.menu_containerul .menu_containerli:hover .secondlevelul_menu {
+    z-index: 99;
+    opacity: 1;
+    margin-top: 0;
+    width: 300px;
+}
+
+.menu_containerul .secondlevelul_menu .menu_containerli {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    word-spacing: -4px;
+}
+
+.menu_containerul.secondlevelul_menu .menu_containerli a {
+    padding: 5px 12px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Submenu styling */
+.submenu {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -999;
+    transition: all ease 0.5s;
+}
+
+.menu_containerli:hover .submenu {
+    z-index: 99;
+    opacity: 1;
+    margin-top: 0;
+    width: 300px;
+}
+
+/* Additional styling for table */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

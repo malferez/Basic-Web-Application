@@ -63,14 +63,11 @@ public class RegisterServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/Login/login.jsp");
             } else {
                 // Show error message on the registration page if user already exists
-                request.setAttribute("errorMessage", "User already exists. Please try a different username or email.");
-                request.getRequestDispatcher("/Login/register.jsp").forward(request, response);
+            	response.sendRedirect("/CS372-Fall2024-GroupA/Login/register.jsp?error=user_already_exists");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle other errors by displaying a general error message on the registration page
-            request.setAttribute("errorMessage", "An error occurred. Please try again.");
-            request.getRequestDispatcher("/Login/login.jsp").forward(request, response);
+            response.sendRedirect("/CS372-Fall2024-GroupA/Login/register.jsp?error=failed_try_again");
         }
     }
 

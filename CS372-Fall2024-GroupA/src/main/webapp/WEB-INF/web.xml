@@ -67,4 +67,34 @@
     <servlet-name>CyberAttackServlet</servlet-name>
     <url-pattern>/CyberAttackServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ForgotPasswordServlet</display-name>
+    <servlet-name>ForgotPasswordServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.ForgotPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotPasswordServlet</servlet-name>
+    <url-pattern>/ForgotPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>VerifySecurityQuestionsServlet</display-name>
+    <servlet-name>VerifySecurityQuestionsServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.VerifySecurityQuestionsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifySecurityQuestionsServlet</servlet-name>
+    <url-pattern>/VerifySecurityQuestionsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResetPasswordServlet</display-name>
+    <servlet-name>ResetPasswordServlet</servlet-name>
+    <servlet-class>LearnSE.ServletFiles.ResetPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResetPasswordServlet</servlet-name>
+    <url-pattern>/ResetPasswordServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

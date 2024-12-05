@@ -22,8 +22,7 @@
 	<title>Data Entry</title>
 	</head>
 	<body>
-	<%@ include file="/Main_Contents/mainpage.jsp"%>
-	<jsp:include page="/CourseEntryServlet" />	
+	<%@ include file="/Main_Contents/mainpage.jsp"%>	
 	<!-- 
 		<form method="get" action="ViewMainDataServlet">
 			<input type="submit" value="Continue to the main page"></input>

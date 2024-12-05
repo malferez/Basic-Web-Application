@@ -33,14 +33,14 @@ public class CyberAttackServlet extends HttpServlet {
         ArrayList<CyberModel> cyberData = dao.getCyberData();
 
         // Debug: Print the size of the data retrieved
-        System.out.println("cyberData size in servlet: " + (cyberData != null ? cyberData.size() : "null"));
+        //System.out.println("cyberData size in servlet: " + (cyberData != null ? cyberData.size() : "null"));
 
         // Set the data in the request scope
         request.setAttribute("cyberData", cyberData);
 
         // Forward to the JSP
         request.getRequestDispatcher("CyberAttacks/TopCountriesAttacks.jsp").forward(request, response);
-        System.out.println("Forwarding to JSP with cyberData: " + cyberData.size());
+        //System.out.println("Forwarding to JSP with cyberData: " + cyberData.size());
 
     }
 }

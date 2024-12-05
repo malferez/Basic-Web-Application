@@ -20,7 +20,7 @@ public class userDao {
         boolean isValid = false;
         String query = "SELECT password FROM users WHERE userid = ?";
 
-        try (Connection conn = dbConn.create_connection_string(); // Use dbConnection to get DB connection
+        try (Connection conn = dbConn.create_connection_string();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, userId);
@@ -28,10 +28,7 @@ public class userDao {
 
             if (rs.next()) {
                 String storedPassword = rs.getString("password");
-                if (dbConn.verifyPassword(currentPassword, storedPassword)) {
-                    isValid = true;
-                }
-
+                isValid = dbConn.verifyPassword(currentPassword, storedPassword);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,28 +43,26 @@ public class userDao {
 
         String query = "UPDATE users SET password = ? WHERE userid = ?";
 
-        try (Connection conn = dbConn.create_connection_string(); // Use dbConnection to get DB connection
+        try (Connection conn = dbConn.create_connection_string();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, hashedPassword);
             stmt.setString(2, userId);
 
             int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                isUpdated = true;
-            }
+            isUpdated = rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return isUpdated;
     }
 
-    // Method to check if the email is already taken
+ // Method to check if the email is already registered/taken
     public boolean isEmailTaken(String email) {
         boolean taken = false;
         String query = "SELECT COUNT(*) FROM users WHERE email = ?";
 
-        try (Connection conn = dbConn.create_connection_string(); // Use dbConnection to get DB connection
+        try (Connection conn = dbConn.create_connection_string();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, email);
@@ -87,16 +82,14 @@ public class userDao {
         boolean isUpdated = false;
         String query = "UPDATE users SET email = ? WHERE userid = ?";
 
-        try (Connection conn = dbConn.create_connection_string(); // Use dbConnection to get DB connection
+        try (Connection conn = dbConn.create_connection_string();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, newEmail);
             stmt.setString(2, userId);
 
             int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                isUpdated = true;
-            }
+            isUpdated = rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -108,7 +101,7 @@ public class userDao {
         boolean isDeleted = false;
         String query = "DELETE FROM users WHERE userid = ?";
 
-        try (Connection conn = dbConn.create_connection_string(); // Use dbConnection to get DB connection
+        try (Connection conn = dbConn.create_connection_string();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, userId);
@@ -120,5 +113,68 @@ public class userDao {
             e.printStackTrace();
         }
         return isDeleted;
+    }
+
+    // Forgot Password: Retrieve security questions by email
+    public String[] getSecurityQuestionsByEmail(String email) {
+        try (Connection conn = dbConn.create_connection_string()) {
+            String query = "SELECT securityquestion1, securityquestion2 FROM users WHERE email = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return new String[] { rs.getString("securityquestion1"), rs.getString("securityquestion2") };
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // Forgot Password: Verify the security answers
+    public boolean verifySecurityAnswers(String email, String answer1, String answer2) {
+        boolean isVerified = false;
+        String query = "SELECT securityanswer1, securityanswer2 FROM users WHERE email = ?";
+
+        try (Connection conn = dbConn.create_connection_string();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String storedAnswer1 = rs.getString("securityanswer1");
+                String storedAnswer2 = rs.getString("securityanswer2");
+
+                // Compare plain text answers directly
+                isVerified = answer1.equalsIgnoreCase(storedAnswer1) && answer2.equalsIgnoreCase(storedAnswer2);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return isVerified;
+    }
+
+    // Forgot Password: Update password
+    public boolean resetPassword(String email, String newPassword) {
+        boolean isUpdated = false;
+        String hashedPassword = dbConn.hashpwd(newPassword);
+
+        String query = "UPDATE users SET password = ? WHERE email = ?";
+
+        try (Connection conn = dbConn.create_connection_string();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, hashedPassword);
+            stmt.setString(2, email);
+
+            int rowsAffected = stmt.executeUpdate();
+            isUpdated = rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isUpdated;
     }
 }
